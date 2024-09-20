@@ -1,0 +1,9 @@
+dbt_training:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: dbt_zduhovic
+      user: default
+      host: localhost
+      port: 8123
