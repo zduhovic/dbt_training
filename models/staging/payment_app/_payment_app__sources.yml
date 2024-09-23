@@ -1,8 +1,13 @@
 version: 2
 
 sources:
-  - name: paymet_app
-    database: raw
-    schema: payment_app
+  - name: payment_app
+    database: default
+    schema: raw
     tables:
-    - transactions
+    - name: transactions
+#  - name: paymet_app
+#    database: raw
+#    schema: payment_app
+#    tables:
+#    - name: transactions

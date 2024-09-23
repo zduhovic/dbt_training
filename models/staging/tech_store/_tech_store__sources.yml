@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: tech_store
-    database: raw
-    schema: tech_store
+    database: default
+    schema: raw
     tables:
       - name: city
       - name: customer
