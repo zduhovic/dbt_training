@@ -28,20 +28,20 @@ customers as (
 final as (
 
     select
-        orders.order_id,
-        transactions.transaction_id,
-        customers.customer_id,
-        customers.customer_name,
-        products.product_name,
-        products.category,
-        products.price,
-        products.currency,
-        orders.quantity,        
-        transactions.cost_per_unit_in_usd,
-        transactions.amount_in_usd,
-        transactions.tax_in_usd,
-        transactions.total_charged_in_usd,
-        orders.created_at
+        orders.order_id order_id,
+        transactions.transaction_id transaction_id,
+        customers.customer_id as customer_id,
+        customers.customer_name customer_name,
+        products.product_name product_name,
+        products.category category,
+        products.price price,
+        products.currency currency,
+        orders.quantity quantity,        
+        transactions.cost_per_unit_in_usd cost_per_unit_in_usd,
+        transactions.amount_in_usd amount_in_usd,
+        transactions.tax_in_usd tax_in_usd,
+        transactions.total_charged_in_usd total_charged_in_usd,
+        orders.created_at created_at
 
     from orders
 
