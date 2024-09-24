@@ -24,6 +24,11 @@ customers as (
 
 ),
 
+sale_dates as (
+
+    select * from {{ ref('sale_dates') }}
+
+),
 
 final as (
 
@@ -36,7 +41,8 @@ final as (
         products.category category,
         products.price price,
         products.currency currency,
-        orders.quantity quantity,        
+        orders.quantity quantity,
+        IF(isNull(sale_dates.SALE_DATE), false, true) AS is_sale_order,
         transactions.cost_per_unit_in_usd cost_per_unit_in_usd,
         transactions.amount_in_usd amount_in_usd,
         transactions.tax_in_usd tax_in_usd,
@@ -53,6 +59,9 @@ final as (
 
     left join customers
         on orders.customer_id = customers.customer_id
+
+    left join sale_dates
+        on orders.created_at_dt = sale_dates.SALE_DATE
 
 )
 
