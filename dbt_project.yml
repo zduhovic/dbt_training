@@ -30,6 +30,9 @@ seeds:
         NAME: varchar
         DISCOUNT_PERCENT: number(18,2)
 
+vars:
+  default_date: '9999-01-01'
+
 models:
   dbt_training:
     # Config indicated by + and applies to all files under models/example/
