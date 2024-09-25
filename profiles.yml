@@ -3,14 +3,20 @@ dbt_training:
   outputs:
     dev:
       type: clickhouse
-      schema: dbt_zduhovic
-      user: default
+      schema: dbt_testdev
+      user: "{{ env_var('DBT_USER') }}"
+      host: localhost
+      port: 8123
+    ci:
+      type: clickhouse
+      schema: dbt_ci
+      user: "{{ env_var('DBT_USER') }}"
       host: localhost
       port: 8123
     prod:
       type: clickhouse
       schema: dbt_prod
-      user: default
+      user: "{{ env_var('DBT_USER') }}"
       host: localhost
       port: 8123
   target: dev
