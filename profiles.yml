@@ -7,3 +7,10 @@ dbt_training:
       user: default
       host: localhost
       port: 8123
+    prod:
+      type: clickhouse
+      schema: dbt_prod
+      user: default
+      host: localhost
+      port: 8123
+  target: dev
