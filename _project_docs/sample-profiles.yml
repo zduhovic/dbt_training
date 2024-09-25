@@ -1,0 +1,16 @@
+dbt_training:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: dbt_zduhovic
+      user: default
+      host: localhost
+      port: 8123
+    prod:
+      type: clickhouse
+      schema: dbt_prod
+      user: default
+      host: localhost
+      port: 8123
+  target: dev
