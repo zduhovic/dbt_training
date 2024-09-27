@@ -26,5 +26,7 @@ models:
                 - Accessories
                 - Software
                 - Video
+          - dbt_utils.not_accepted_values:
+              values: ['Laptops']
   - name: stg_tech_store__states
   - name: stg_tech_store__zip_codes
