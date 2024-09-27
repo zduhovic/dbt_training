@@ -22,10 +22,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.10'
           
       - name: Install dbt
-        run: pip3 install dbt-snowflake
+        run: pip3 install dbt-clickhouse
+
+      - name: Install packages
+        run: dbt deps
 
       - name: Deploy & Test Models (PROD)
         run: dbt build --profiles-dir . --target prod

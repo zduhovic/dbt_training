@@ -25,5 +25,8 @@ jobs:
       - name: Install dbt
         run: pip install dbt-clickhouse
 
+      - name: Install packages
+        run: dbt deps
+
       - name: Deploy & Test Models (CI)
         run: dbt build --profiles-dir . --target ci
