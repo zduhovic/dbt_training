@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: ad_platform
+#    database: raw_ad_platform
+    freshness: 
+      warn_after: {count: 1, period: day}
+      error_after: {count: 2, period: day}
+      filter: id <= 3
+    loaded_at_field: toTimezone(toDateTime(created_at, 'UTC'), 'Europe/Zagreb')
+    
+    schema: raw_ad_platform
+    tables:
+      - name: ads
+        freshness: null
+      - name: ad_performance_hourly
