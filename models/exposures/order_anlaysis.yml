@@ -1,0 +1,16 @@
+version: 2
+
+exposures:
+
+  - name: order_analysis
+    type: analysis
+    description: >
+      This is an analysis of individual orders to better understand sales trends.
+    
+    depends_on:
+      - ref('orders')
+      - ref('stg_payment_app__transactions')
+      - source('tech_store', 'orders')
+    owner:
+      name: Michael K
+      email: student@kahandatasolutions.com

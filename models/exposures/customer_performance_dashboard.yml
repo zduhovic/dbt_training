@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+
+  - name: customer_performance_dashboard
+    type: dashboard
+    description: >
+      This is the primary dashboard used by all sales reps to monitor customer performance.
+    
+    depends_on:
+      - ref('top_customers')
+      - ref('orders')
+      - source('tech_store', 'orders')
+      - source('tech_store', 'customer')
+    owner:
+      name: Michael K
+      email: student@kahandatasolutions.com
